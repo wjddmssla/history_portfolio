@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY QUEST LOG</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">🛡️</div>
+            <span class="logo-text">MY QUEST LOG</span>
+        </div>
+
+        <button class="hamburger-btn" id="menuToggle" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <ul class="main-menu">
+                <li><a href="#">메인페이지</a></li>
+                <li class="has-sub">
+                    <a href="#about">자기소개 <span class="arrow">▼</span></a>
+                    <ul class="sub-menu">
+                        <li><a href="#about">프로필 & 능력치</a></li>
+                        <li><a href="#about">성장 히스토리</a></li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a href="#">경력 홈페이지 <span class="arrow">▼</span></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">전 회사 제작 홈페이지</a></li>
+                        <li><a href="#">프로젝트 갤러리</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">문의사항</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+    <!-- mainSlide -->
+    <div class="hero-section">
+        <div class="stars-bg"></div>
+        <div class="planet-bg">🪐</div>
+
+        <div class="hero-content">
+            <h1 class="main-title">MY QUEST LOG</h1>
+            <div class="subtitle-badge">
+                <span>THE CAREER ADVENTURER</span>
+            </div>
+
+            <a href="#about" class="quest-btn">
+                <span class="btn-title">START A NEW QUEST</span>
+                <span class="btn-sub">Hire Me</span>
+            </a>
+        </div>
+
+        <div class="character-container">
+            <div class="hud-screen">
+                <div class="hud-line"></div>
+                <div class="hud-line short"></div>
+                <div class="hud-line"></div>
+            </div>
+            <div class="pixel-character">🧑‍💻</div>
+        </div>
+    </div>
+
+    <!-- about me -->
+   <section id="about" class="about-section">
+        <h2 class="section-title">ABOUT J. LEE</h2>
+
+        <div class="about-card">
+            <div class="profile-image-box">
+                <img src="/images/profile.jpg" alt="프로필 이미지">
+            </div>
+
+            <div class="profile-info">
+                <h3 class="info-title">FULL-STACK CREATIVE DEVELOPER</h3>
+                <p class="info-desc">
+                    디자인과 코딩의 경계를 허무는 멀티스택 크리에이터입니다. 감각적인 UI/UX 비주얼 구현부터 백엔드 데이터 로직 설계까지, 단순한 화면을 넘어 완벽하게 작동하는 디지털 경험을 구축합니다.
+                </p>
+
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>PHOTOSHOP</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>ILLUSTRATOR</span>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 88%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>FIGMA</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>INDESIGN</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>PREMIERE PRO</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 75%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>HTML / CSS</span>
+                            <span class="skill-percent">95%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 95%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>JAVASCRIPT</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>PHP</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 75%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>JAVA</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>PYTHON</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span>SQL</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="--target-width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- my career -->
+    <section id="career" class="career-section">
+        <h2 class="section-title">CAREER & LOG</h2>
+
+        <div class="quest-ui-board">
+            
+            <div class="quest-panel">
+                <div class="panel-header">
+                    <span class="header-left"><span class="icon">💼</span> CAREER</span>
+                    <span class="scroll-hint">▼ SCROLL</span>
+                </div>
+                <div class="panel-scroll-area">
+                    
+                    <div class="quest-item highlight">
+                        <div class="item-header">
+                            <span class="date">2025.12 ~ 2026.08</span>
+                            <span class="badge">MAIN</span>
+                        </div>
+                        <h4 class="title">아이디자인닷컴</h4>
+                        <p class="role">웹디자이너 & 퍼블리셔 (8개월)</p>
+                        <p class="desc">자사 및 클라이언트 웹사이트 UI/UX 디자인, 반응형 웹 퍼블리싱 및 유지보수</p>
+                    </div>
+
+                    <div class="quest-item">
+                        <div class="item-header">
+                            <span class="date">2025.12 ~ 2026.02</span>
+                        </div>
+                        <h4 class="title">CJ 올리브영</h4>
+                        <p class="role">주말 미들 Crew</p>
+                        <p class="desc">고객 니즈 파악 및 현장 커뮤니케이션 구축</p>
+                    </div>
+
+                    <div class="quest-item">
+                        <div class="item-header">
+                            <span class="date">2025.04 ~ 2025.09</span>
+                        </div>
+                        <h4 class="title">CJ 올리브영</h4>
+                        <p class="role">주말 오전 Mate</p>
+                        <p class="desc">매장 관리 및 고객 응대</p>
+                    </div>
+
+                    <div class="quest-item">
+                        <div class="item-header">
+                            <span class="date">2024.03 ~ 2025.02</span>
+                        </div>
+                        <h4 class="title">동명대학교 학사조교</h4>
+                        <p class="role">간호학과 행정 조교</p>
+                        <p class="desc">학과 행정 업무 지원 및 데이터 문서 관리</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quest-panel">
+                <div class="panel-header">
+                    <span class="header-left"><span class="icon">📜</span> ACTIVITIES</span>
+                    <span class="scroll-hint">▼ SCROLL</span>
+                </div>
+                <div class="panel-scroll-area">
+                    
+                    <div class="quest-item">
+                        <div class="item-header"><span class="date">2025.05 ~ 2025.09</span></div>
+                        <h4 class="title">UIUX 반응형 웹디자인</h4>
+                        <p class="role">나래디자인학원 수료</p>
+                    </div>
+
+                    <div class="quest-item">
+                        <div class="item-header"><span class="date">2025.07 ~ 2025.08</span></div>
+                        <h4 class="title">돋움 일경험 프로젝트</h4>
+                        <p class="role">순수한우 패키지 디자인 참여</p>
+                    </div>
+
+                    <div class="quest-item">
+                        <div class="item-header"><span class="date">2023.07</span></div>
+                        <h4 class="title">미국 SW 해외연수</h4>
+                        <p class="role">USC Univ / AI·DS 수업 및 해커톤</p>
+                    </div>
+
+                    <div class="quest-item">
+                        <div class="item-header"><span class="date">2023.04 ~ 2023.10</span></div>
+                        <h4 class="title">SW-Honors Club</h4>
+                        <p class="role">USC Univ / 우수 학생 협업 멘토링</p>
+                    </div>
+
+                    <div class="quest-item">
+                        <div class="item-header"><span class="date">2022.07</span></div>
+                        <h4 class="title">해외 SW교육 프로그램</h4>
+                        <p class="role">동명대 & 인도 델리대 연합 웹개발</p>
+                    </div>
+
+                    <div class="quest-item">
+                        <div class="item-header"><span class="date">2021.03 ~ 2021.05</span></div>
+                        <h4 class="title">코드잇(codeit) 대외활동</h4>
+                        <p class="role">JAVA, Python, HTML/CSS 프로그래밍 교육</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quest-panel">
+                <div class="panel-header">
+                    <span class="header-left"><span class="icon">🎓</span> EDUCATION</span>
+                </div>
+                <div class="panel-scroll-area">
+                    
+                    <div class="quest-item">
+                        <div class="item-header"><span class="date">2020.03 ~ 2024.02</span></div>
+                        <h4 class="title">동명대학교 졸업</h4>
+                        <p class="role">융합미디어전공</p>
+                    </div>
+
+                    <div class="quest-item">
+                        <div class="item-header"><span class="date">2017.03 ~ 2020.02</span></div>
+                        <h4 class="title">부산여자고등학교 졸업</h4>
+                        <p class="role">이과</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+</body>
+
+</html>

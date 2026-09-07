@@ -1,0 +1,689 @@
+
+@media (max-width: 1100px) {
+
+    .section-inner {
+        width: min(calc(100% - 80px), var(--max-width));
+    }
+
+
+    .hero-inner {
+        grid-template-columns: 1fr 0.7fr;
+        width: min(calc(100% - 80px), var(--max-width));
+    }
+
+
+    .hero-title {
+        font-size: clamp(70px, 10vw, 120px);
+    }
+
+
+    .status-card {
+        width: 290px;
+    }
+
+
+    .world-map {
+        height: 750px;
+        margin-top: 20px;
+    }
+
+
+    .world-node {
+        width: 290px;
+    }
+
+
+    .world-node-hotel {
+        left: 0;
+    }
+
+
+    .world-node-corporate {
+        right: 0;
+    }
+
+
+    .world-node-brand {
+        left: 18%;
+    }
+
+
+    .world-node-etc {
+        right: 18%;
+    }
+
+
+    .modal-container {
+        width: calc(100% - 50px);
+        height: calc(100% - 50px);
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 767px) {
+
+
+    /* ==================================================
+       COMMON
+    ================================================== */
+
+    :root {
+        --header-height: 70px;
+    }
+
+
+    .section-inner {
+        width: calc(100% - 40px);
+    }
+
+
+    .section-label {
+        gap: 10px;
+        font-size: 8px;
+    }
+
+
+    /* ==================================================
+       HEADER
+    ================================================== */
+
+    .header-inner {
+        width: calc(100% - 40px);
+    }
+
+
+    .logo-text {
+        font-size: 10px;
+    }
+
+
+    .header-status {
+        display: none;
+    }
+
+
+    .menu-button {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    /* ==================================================
+       FULLSCREEN MENU
+    ================================================== */
+
+    .menu-inner {
+        width: calc(100% - 40px);
+        padding: 30px 0;
+    }
+
+
+    .menu-link {
+        grid-template-columns: 40px 1fr 25px;
+        padding: 18px 0;
+    }
+
+
+    .menu-link:hover {
+        padding-left: 10px;
+    }
+
+
+    .menu-name {
+        font-size: clamp(32px, 10vw, 55px);
+    }
+
+
+    .menu-bg-number {
+        right: -20px;
+        bottom: -40px;
+        font-size: 230px;
+    }
+
+
+    .menu-bottom {
+        font-size: 7px;
+    }
+
+
+    /* ==================================================
+       HERO
+    ================================================== */
+
+    .hero-section {
+        min-height: 100svh;
+    }
+
+
+    .hero-grid {
+        background-size: 50px 50px;
+    }
+
+
+    .hero-inner {
+        display: block;
+        width: calc(100% - 40px);
+        padding-top: 50px;
+    }
+
+
+    .hero-eyebrow {
+        margin-bottom: 25px;
+        font-size: 8px;
+    }
+
+
+    .eyebrow-line {
+        width: 25px;
+    }
+
+
+    .hero-title {
+        font-size: clamp(58px, 18vw, 95px);
+        line-height: 0.87;
+    }
+
+
+    .hero-description {
+        margin-top: 30px;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+
+    .hero-start-button {
+        margin-top: 30px;
+    }
+
+
+    .hero-status {
+        display: none;
+    }
+
+
+    .hero-bottom {
+        left: 20px;
+        bottom: 25px;
+        width: calc(100% - 40px);
+        transform: none;
+        font-size: 7px;
+    }
+
+
+    .scroll-line {
+        width: 35px;
+    }
+
+
+    /* ==================================================
+       ABOUT
+    ================================================== */
+
+    .about-section {
+        padding: 100px 0;
+    }
+
+
+    .section-heading h2 {
+        margin-top: 20px;
+        font-size: clamp(55px, 18vw, 85px);
+    }
+
+
+    .player-profile {
+        display: block;
+        margin-top: 60px;
+    }
+
+
+    .profile-image {
+        aspect-ratio: 0.85;
+    }
+
+
+    .profile-image-number {
+        right: -10px;
+        bottom: -20px;
+        font-size: 65px;
+    }
+
+
+    .profile-content {
+        margin-top: 70px;
+    }
+
+
+    .profile-kicker {
+        margin-bottom: 20px;
+        font-size: 8px;
+    }
+
+
+    .profile-content h3 {
+        font-size: clamp(35px, 10vw, 52px);
+    }
+
+
+    .profile-description {
+        margin-top: 25px;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+
+    .player-stats {
+        margin-top: 40px;
+    }
+
+
+    .player-stat {
+        grid-template-columns: 80px 1fr 25px;
+        gap: 10px;
+    }
+
+
+    .stat-label {
+        font-size: 7px;
+    }
+
+
+    /* ==================================================
+       WORLD
+    ================================================== */
+
+    .world-section {
+        min-height: auto;
+        padding: 100px 0;
+    }
+
+
+    .world-heading p {
+        margin-top: 25px;
+        font-size: 11px;
+    }
+
+
+    .world-map {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+        margin-top: 60px;
+        padding-bottom: 20px;
+    }
+
+
+    .world-center {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 35px;
+        transform: none;
+        order: -1;
+    }
+
+
+    .ring-01 {
+        width: 135%;
+        height: 135%;
+    }
+
+
+    .ring-02 {
+        width: 165%;
+        height: 165%;
+    }
+
+
+    .center-number {
+        font-size: 35px;
+    }
+
+
+    .center-text {
+        bottom: 22px;
+        font-size: 6px;
+    }
+
+
+    .world-node {
+        position: relative;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        display: grid;
+        grid-template-columns: 25px 38px 1fr auto;
+        width: 100%;
+        padding: 14px;
+        gap: 10px;
+    }
+
+
+    .node-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 9px;
+    }
+
+
+    .node-info strong {
+        font-size: 9px;
+    }
+
+
+    .node-info small {
+        font-size: 7px;
+    }
+
+
+    .node-status {
+        font-size: 6px;
+    }
+
+
+    .map-line {
+        display: none;
+    }
+
+
+    /* ==================================================
+       PROJECT
+    ================================================== */
+
+    .projects-section {
+        padding: 100px 0;
+    }
+
+
+    .projects-header {
+        display: block;
+    }
+
+
+    .project-filter {
+        justify-content: flex-start;
+        margin-top: 35px;
+        gap: 5px;
+    }
+
+
+    .filter-button {
+        padding: 7px 10px;
+        font-size: 7px;
+    }
+
+
+    .project-count {
+        margin-top: 60px;
+    }
+
+
+    .project-grid {
+        display: block;
+        margin-top: 35px;
+    }
+
+
+    .project-card {
+        margin-bottom: 55px;
+    }
+
+
+    .project-card:nth-child(even) {
+        margin-top: 0;
+    }
+
+
+    .project-card-image {
+        aspect-ratio: 1.25;
+    }
+
+
+    .project-card-overlay {
+        display: none;
+    }
+
+
+    .project-card-title {
+        font-size: 21px;
+    }
+
+
+    .project-card-domain {
+        font-size: 9px;
+    }
+
+
+    .card-hp-bar {
+        width: 90px;
+    }
+
+
+    .project-more {
+        margin-top: 40px;
+        padding: 17px 0;
+        font-size: 8px;
+    }
+
+
+    /* ==================================================
+       ACHIEVEMENT
+    ================================================== */
+
+    .achievement-section {
+        padding: 100px 0;
+    }
+
+
+    .achievement-heading {
+        display: block;
+    }
+
+
+    .achievement-heading h2 {
+        margin-top: 25px;
+        font-size: clamp(60px, 18vw, 90px);
+    }
+
+
+    .achievement-list {
+        margin-top: 60px;
+    }
+
+
+    .achievement-item {
+        grid-template-columns: 45px 1fr 25px;
+        gap: 12px;
+        padding: 20px 0;
+    }
+
+
+    .achievement-item:hover {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+    .achievement-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 10px;
+    }
+
+
+    .achievement-info strong {
+        font-size: 15px;
+    }
+
+
+    .achievement-info small {
+        font-size: 7px;
+    }
+
+
+    .achievement-number {
+        font-size: 14px;
+    }
+
+
+    /* ==================================================
+       CONTACT
+    ================================================== */
+
+    .contact-section {
+        min-height: 650px;
+        padding: 35px 0 25px;
+    }
+
+
+    .contact-main {
+        min-height: 480px;
+    }
+
+
+    .contact-main h2 {
+        font-size: clamp(65px, 19vw, 100px);
+    }
+
+
+    .contact-main p {
+        margin-top: 30px;
+        font-size: 11px;
+    }
+
+
+    .contact-button {
+        width: 100%;
+        margin-top: 25px;
+        font-size: 9px;
+    }
+
+
+    .contact-bottom {
+        font-size: 7px;
+    }
+
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    .site-footer {
+        padding: 25px 0;
+    }
+
+
+    .footer-inner {
+        width: calc(100% - 40px);
+    }
+
+
+    .footer-info {
+        display: none;
+    }
+
+
+    .footer-logo {
+        font-size: 9px;
+    }
+
+
+    .footer-top {
+        font-size: 7px;
+    }
+
+
+    /* ==================================================
+       PROJECT MODAL
+    ================================================== */
+
+    .project-modal {
+        overflow-y: auto;
+    }
+
+
+    .modal-container {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: calc(100% - 20px);
+        height: auto;
+        min-height: calc(100% - 20px);
+        margin: 10px;
+        transform: translateY(30px);
+    }
+
+
+    .project-modal.is-open .modal-container {
+        transform: translateY(0);
+    }
+
+
+    .modal-header {
+        height: 60px;
+        padding: 0 20px;
+    }
+
+
+    .modal-content {
+        display: block;
+    }
+
+
+    .modal-visual {
+        height: 260px;
+        padding: 15px;
+    }
+
+
+    .modal-image-label {
+        left: 25px;
+        bottom: 25px;
+    }
+
+
+    .modal-info {
+        padding: 30px 20px;
+    }
+
+
+    .modal-info h3 {
+        font-size: 38px;
+    }
+
+
+    .contribution-box {
+        margin-top: 35px;
+    }
+
+
+    .modal-meta {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+
+    .modal-footer {
+        grid-template-columns: 1fr 1fr;
+        height: 60px;
+        padding: 0 20px;
+    }
+
+
+    .modal-footer > span {
+        display: none;
+    }
+
+
+    .modal-next {
+        grid-column: 2;
+    }
+
+}
