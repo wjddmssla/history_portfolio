@@ -9,9 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
     <style>
-    /* =========================
-       기본 세팅 및 화면 리셋
-    ========================= */
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     .pnsIntro {
@@ -25,13 +23,9 @@
     .pnsIntro>.pnsBg>.pnsOverlay { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(2,4,6,0.92) 0%, rgba(2,4,6,0.65) 50%, rgba(2,4,6,0.92) 100%); }
     .pnsIntro>.pnsBg>.pnsLight { position: absolute; left: 50%; top: 50%; width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 193, 7, 0.1), transparent 70%); filter: blur(80px); transform: translate(-50%, -50%); }
 
-    /* 쨍한 노란색 별자리 레이어 */
     .star-field { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 2; pointer-events: none; }
     .twinkle-star { position: absolute; width: 2px; height: 2px; background: #FFD54F; border-radius: 50%; opacity: 0; }
 
-    /* =========================
-       [임팩트 연출] 거대 유성 및 균열 이펙트
-    ========================= */
     .intro-gate { position: absolute; top: 0; width: 50%; height: 100%; background: #05070b; z-index: 20; }
     .gate-left { left: 0; border-right: 1px solid rgba(255,193,7,0.05); }
     .gate-right { right: 0; border-left: 1px solid rgba(255,193,7,0.05); }
@@ -59,9 +53,7 @@
         z-index: 23; opacity: 0;
     }
 
-    /* =========================
-       안정적인 플렉스형 레이아웃 구조
-    ========================= */
+
     .pnsWrap {
         position: relative; z-index: 5; width: 100%; height: 100vh; 
         max-width: 1500px; margin: 0 auto; padding: 50px 60px;
@@ -69,10 +61,8 @@
         opacity: 0; 
     }
 
-    /* 로고 크기 증가 및 두둥실 애니메이션 */
     .introHeader { width: 100%; display: flex; justify-content: center; }
     .floating-logo { width: 240px; opacity: 0.95; animation: floatLogo 3.5s ease-in-out infinite; }
-    /* 텍스트 로고 대체용 (이미지 대신 텍스트를 쓸 경우) */
     .text-logo { font-size: 28px; font-weight: 800; letter-spacing: 2px; color: #fff; animation: floatLogo 3.5s ease-in-out infinite; }
 
     @keyframes floatLogo {
@@ -81,7 +71,6 @@
         100% { transform: translateY(0px); }
     }
 
-    /* 중앙 본문 여백 축소 */
     .introBody {
         display: flex; justify-content: center; gap: clamp(60px, 8vw, 150px); align-items: center; 
         width: 100%; flex: 1; padding: 20px 0;
@@ -125,7 +114,6 @@
         gap: 15px; 
     }
 
-    /* 숫자 크기 뻥튀기 + 텍스트 그라데이션 + 네온 펄스 애니메이션 */
     .introYears strong { 
         font-size: clamp(55px, 6vw, 80px); 
         line-height: 0.9; 
@@ -137,7 +125,6 @@
         animation: pulseGlow 1.5s infinite alternate; 
     }
 
-    /* 옆에 붙는 글자도 눈에 확 띄게 골드 컬러로 변경 */
     .introYears span { 
         font-size: clamp(12px, 1.2vw, 15px); 
         letter-spacing: 4px; 
@@ -146,7 +133,6 @@
         text-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
     }
 
-    /* 클릭 안내 가이드 */
     .click-anywhere { display: flex; flex-direction: column; align-items: center; gap: 10px; color: rgba(255, 213, 79, 0.4); font-size: 11px; letter-spacing: 5px; margin-right: 20px; transition: color 0.3s; }
     .pnsIntro:hover .click-anywhere { color: #FFC107; }
     .mouse-icon { width: 20px; height: 32px; border: 2px solid currentColor; border-radius: 12px; position: relative; }
@@ -156,9 +142,7 @@
 
     @keyframes mouseScroll { 0% { opacity: 1; top: 5px; } 100% { opacity: 0; top: 15px; } }
 
-    /* =========================
-       반응형 모바일 최적화
-    ========================= */
+
     @media(max-width:1200px){
         .pnsWrap { padding: 40px; }
         .introBody { flex-direction: column; align-items: center; justify-content: center; gap: 40px; text-align: center; }
@@ -193,7 +177,6 @@
         <div class="intro-gate gate-right"></div>
 
         <div class="pnsBg">
-            <!-- 배경 이미지 경로에 맞게 수정하세요 -->
             <img src="/images/main/intro_bg.jpg" alt="Portfolio Background">
             <div class="pnsOverlay"></div>
             <div class="pnsLight"></div>
@@ -203,7 +186,7 @@
             
             <div class="introHeader">
                 <div class="introLogo">
-                    <!-- 개인 로고 이미지가 있다면 아래 img 태그 사용, 없다면 텍스트 로고 사용 -->
+                    <!-- 로고 추후 수정 예정 -->
                     <!-- <img src="/images/main/my_logo.png" alt="My Logo" class="floating-logo"> -->
                     <div class="text-logo">PORTFOLIO.</div>
                 </div>
@@ -211,7 +194,6 @@
 
             <div class="introBody">
                 <div class="titleGroup">
-                    <!-- 포트폴리오용 문구로 수정 -->
                     <span class="subTitle lang-switch" data-en="FAST & PASSIONATE" data-ko="밀도 높은 몰입과 빠른 성장">FAST & PASSIONATE</span>
                     <h2 class="lang-switch" data-en="Web Developer<br>& UI/UX Designer" data-ko="프론트엔드 개발자<br>& 웹 퍼블리셔">Web Developer<br>& UI/UX Designer</h2>
                     <div class="introService">
@@ -225,7 +207,7 @@
                         <span class="label lang-switch" data-en="COMPLETED PROJECTS" data-ko="누적 완료 프로젝트">COMPLETED PROJECTS</span>
                     </div>
                     <strong class="numberBox">
-                        <!-- 30~40개 중 임시로 35로 설정해두었습니다 -->
+                        <!-- 총 프로젝트 개수 -->
                         <span class="count" data-target="35">0</span>
                     </strong>
                 </div>
@@ -234,7 +216,6 @@
             <div class="introFooter">
                 <div class="introYears">
                     <strong id="monthCounter">0</strong>
-                    <!-- YEARS 대신 MONTHS 로 변경! -->
                     <span class="lang-switch" data-en="MONTHS OF EXPERIENCE" data-ko="개월의 실무 경험">MONTHS OF EXPERIENCE</span>
                 </div>
                 
@@ -258,15 +239,11 @@
         const monthCounterEl = document.getElementById("monthCounter");
         const serviceText = document.querySelector(".serviceText");
 
-        // 경력 8개월 세팅
         const expMonths = 8; 
         const projectTarget = Number(projectCountEl.dataset.target) || 0;
 
         let currentLang = 'en';
 
-        /* ==========================================
-           1. 은은한 배경 밤하늘 별자리
-        ========================================== */
         const starField = document.querySelector('.star-field');
         for(let i=0; i<120; i++) {
             let star = document.createElement('div');
@@ -291,9 +268,6 @@
             });
         }
 
-        /* ==========================================
-           2. 오프닝 연출 애니메이션
-        ========================================== */
         const openTimeline = gsap.timeline();
         gsap.set(bgImage, { scale: 1.3, opacity: 0.4 });
         gsap.set(".pnsWrap", { opacity: 1 });
@@ -318,10 +292,6 @@
             
             .call(startCounters, null, "-=1.2");
 
-
-        /* ==========================================
-           3. 숫자 카운터 작동 (개월 수 & 프로젝트 수)
-        ========================================== */
         function startCounters() {
             let currentMonthObj = { val: 0 };
             gsap.to(currentMonthObj, { 
@@ -340,9 +310,7 @@
             });
         }
 
-        /* ==========================================
-           4. 마우스 패럴랙스
-        ========================================== */
+
         document.addEventListener("mousemove", function(e) {
             const x = (e.clientX / window.innerWidth - 0.5);
             const y = (e.clientY / window.innerHeight - 0.5);
@@ -351,9 +319,7 @@
             gsap.to(light, { x: `calc(-50% + ${x * 60}px)`, y: `calc(-50% + ${y * 60}px)`, overwrite: "auto", duration: 1.2 });
         });
 
-        /* ==========================================
-           5. 서비스(스킬) 순환 시스템
-        ========================================== */
+
         const serviceList = [
             { en: "Frontend Development", ko: "프론트엔드 개발" },
             { en: "UI/UX Design", ko: "UI/UX 디자인" },
@@ -374,9 +340,6 @@
             }});
         }, 3200);
 
-        /* ==========================================
-           6. 영어 <-> 한글 다국어 자동 스위칭 시스템
-        ========================================== */
         setTimeout(() => {
             const langElements = document.querySelectorAll(".lang-switch");
             
