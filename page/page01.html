@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUEST DETAIL - 해운대 오뜨호텔</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+KR:wght@400;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        /* 전체 배경을 검정에서 화사하고 밝은 톤으로 변경 */
+        body { background-color: #f3f0f9; color: #1e0f32; font-family: 'Noto Sans KR', sans-serif; padding: 120px 20px 60px; line-height: 1.5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* HEADER STYLE (밝은 배경에 맞춰 조정) */
+        .header { position: fixed; top: 0; left: 0; width: 100%; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid #d8b4fe; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.1); }
+        .header > .logo { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+        .header > .logo > .logo-icon { font-size: 24px; filter: drop-shadow(0 0 5px #a855f7); }
+        .header > .logo > .logo-text { font-size: 20px; font-weight: 900; color: #6b21a8; letter-spacing: 1px; }
+        .header > .hamburger-btn { width: 44px; height: 44px; background: #f3eeff; border: 2px solid #a855f7; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; box-shadow: 3px 3px 0px #1e0f32; transition: all 0.2s ease; }
+        .header > .hamburger-btn:hover { background: #a855f7; transform: scale(1.05); }
+        .header > .hamburger-btn:hover > span { background-color: #ffffff; }
+        .header > .hamburger-btn > span { width: 20px; height: 3px; background-color: #6b21a8; border-radius: 2px; transition: all 0.3s ease; }
+        .header > .hamburger-btn.active > span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .header > .hamburger-btn.active > span:nth-child(2) { opacity: 0; }
+        .header > .hamburger-btn.active > span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        .header > .nav-menu { position: absolute; top: 85px; right: 40px; background: #ffffff; border: 2px solid #a855f7; border-radius: 12px; padding: 15px; box-shadow: 0 10px 30px rgba(107, 33, 168, 0.15); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; }
+        .header > .nav-menu.active { opacity: 1; visibility: visible; transform: translateY(0); }
+        .header > .nav-menu > .main-menu { list-style: none; display: flex; flex-direction: column; gap: 8px; min-width: 220px; }
+        .header > .nav-menu > .main-menu > li > a { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; font-weight: bold; font-size: 15px; color: #3b0764; border-radius: 6px; text-decoration: none; transition: background 0.2s ease, color 0.2s; }
+        .header > .nav-menu > .main-menu > li > a:hover { background: #f3eeff; color: #9333ea; }
+        .header > .nav-menu > .main-menu > li > a > .arrow { font-size: 10px; margin-left: 8px; color: #a855f7; }
+        .header > .nav-menu > .main-menu > li > .sub-menu { list-style: none; max-height: 0; overflow: hidden; background: #faf8ff; border-radius: 6px; transition: max-height 0.3s ease, padding 0.3s ease; }
+        .header > .nav-menu > .main-menu > li.has-sub:hover > .sub-menu { max-height: 150px; padding: 6px 0; margin-top: 4px; }
+        .header > .nav-menu > .main-menu > li > .sub-menu > li > a { display: block; padding: 6px 20px; font-size: 13px; color: #6b21a8; text-decoration: none; transition: color 0.2s ease; }
+        .header > .nav-menu > .main-menu > li > .sub-menu > li > a:hover { color: #9333ea; font-weight: bold; }
+
+        /* 공통 레트로 버튼 */
+        .pixel-btn { display: inline-block; background-color: #ffffff; color: #6b21a8; border: 2px solid #a855f7; padding: 10px 20px; font-weight: bold; font-size: 0.9rem; text-decoration: none; cursor: pointer; border-radius: 6px; box-shadow: 3px 3px 0px #1e0f32; transition: all 0.15s ease; text-align: center; }
+        .pixel-btn:hover { background-color: #f3eeff; color: #581c87; transform: translate(-2px, -2px); box-shadow: 5px 5px 0px #a855f7; }
+        .pixel-btn.primary { background-color: #a855f7; color: #ffffff; border-color: #a855f7; box-shadow: 3px 3px 0px #1e0f32; }
+        .pixel-btn.primary:hover { background-color: #9333ea; color: #ffffff; }
+
+        /* 밝고 화사한 레트로 게임 보드 스타일 */
+        .quest-board { background: #ffffff; border: 3px solid #a855f7; border-radius: 16px; padding: 24px; box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15), 8px 8px 0px #1e0f32; color: #1e0f32; }
+        .quest-inner { background: #ffffff; border: 2px dashed #c084fc; border-radius: 12px; padding: 24px; }
+        
+        /* 상세 헤더 영역 */
+        .detail-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e9d5ff; padding-bottom: 16px; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+        .detail-header .quest-tag { background: #a855f7; color: #fff; font-size: 0.8rem; font-weight: 900; padding: 4px 12px; border-radius: 4px; display: inline-block; margin-bottom: 6px; }
+        .detail-header .quest-title { font-size: 1.8rem; font-weight: 900; color: #1e0f32; }
+        .detail-header .quest-url { color: #7e22ce; font-weight: 700; text-decoration: none; font-size: 0.95rem; }
+        .detail-header .quest-url:hover { text-decoration: underline; color: #a855f7; }
+
+        /* 메인 레이아웃 (캡처 뷰어 + 스테이터스) */
+        .detail-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 24px; margin-bottom: 30px; }
+        @media (max-width: 992px) { .detail-grid { grid-template-columns: 1fr; } }
+
+        /* 캡처 화면 프레임 */
+        .screen-container { background: #f3eeff; border: 2px solid #a855f7; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+        .screen-bar { background: #e9d5ff; padding: 10px 16px; border-bottom: 2px solid #c084fc; display: flex; justify-content: space-between; align-items: center; font-family: 'Press Start 2P', cursive; font-size: 0.75rem; color: #581c87; }
+        .screen-display { width: 100%; height: 380px; background: #eae6f5; display: flex; align-items: center; justify-content: center; color: #7e22ce; font-family: 'Press Start 2P', cursive; font-size: 0.85rem; border-bottom: 2px dashed #c084fc; overflow: hidden; }
+        .screen-display img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        
+        .screen-tabs { display: flex; gap: 8px; padding: 12px; background: #f8f5ff; }
+        .screen-tab-btn { background: #fff; color: #6b21a8; border: 1.5px solid #c084fc; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border-radius: 6px; transition: all 0.2s; }
+        .screen-tab-btn.active, .screen-tab-btn:hover { background: #a855f7; color: #fff; border-color: #a855f7; }
+
+        /* 스테이터스 & 지분율 패널 */
+        .status-panel { background: #fcf8ff; border: 2px solid #d8b4fe; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+        .status-title { font-family: 'Press Start 2P', cursive; font-size: 0.85rem; color: #7e22ce; border-bottom: 2px solid #e9d5ff; padding-bottom: 10px; margin-bottom: 16px; }
+        
+        /* 기여도 게이지 바 */
+        .gauge-group { margin-bottom: 18px; }
+        .gauge-label { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 800; color: #3b0764; margin-bottom: 6px; }
+        .gauge-track { background: #e9d5ff; border: 1px solid #c084fc; border-radius: 10px; height: 16px; padding: 2px; }
+        .gauge-fill { height: 100%; background: linear-gradient(90deg, #c084fc 0%, #a855f7 100%); border-radius: 8px; }
+
+        /* 기술 스택 태그 */
+        .tech-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+        .tech-badge { background: #f3eeff; border: 1px solid #a855f7; color: #6b21a8; font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; }
+
+        /* 상세 안내 내용 영역 */
+        .info-section { background: #faf8ff; border: 2px solid #e9d5ff; border-radius: 10px; padding: 20px; margin-bottom: 24px; }
+        .info-subhead { font-size: 1.1rem; font-weight: 900; color: #581c87; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .info-desc { font-size: 0.95rem; color: #4c3b6e; line-height: 1.7; word-break: keep-all; }
+
+        .feature-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+        @media (max-width: 768px) { .feature-cards { grid-template-columns: 1fr; } }
+        .feature-item { background: #ffffff; border: 1.5px solid #d8b4fe; border-left: 4px solid #a855f7; border-radius: 8px; padding: 14px; }
+        .feature-item-title { font-size: 0.9rem; font-weight: 900; color: #6b21a8; margin-bottom: 4px; }
+        .feature-item-desc { font-size: 0.85rem; color: #666; line-height: 1.4; }
+
+        /* 하단 이동 버튼 */
+        .nav-bottom { display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+
+    <!-- 공통 헤더 -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">🛡️</div>
+            <span class="logo-text">MY QUEST LOG</span>
+        </div>
+
+        <button class="hamburger-btn" id="menuToggle" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <ul class="main-menu">
+                <li><a href="index.html">메인페이지</a></li>
+                <li class="has-sub">
+                    <a href="#about">자기소개 <span class="arrow">▼</span></a>
+                    <ul class="sub-menu">
+                        <li><a href="#about">프로필 & 능력치</a></li>
+                        <li><a href="#about">성장 히스토리</a></li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a href="#">경력 홈페이지 <span class="arrow">▼</span></a>
+                    <ul class="sub-menu">
+                        <li><a href="../sub/portfolio01.html">전 회사 제작 홈페이지</a></li>
+                        <li><a href="#">프로젝트 갤러리</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">문의사항</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- Outer Game Board -->
+        <main class="quest-board">
+            
+            <!-- Inner Box -->
+            <div class="quest-inner">
+                
+                <!-- 상세 헤더 -->
+                <div class="detail-header">
+                    <div>
+                        <span class="quest-tag">호텔/숙박</span>
+                        <h1 class="quest-title">해운대 오뜨호텔</h1>
+                    </div>
+                    <div>
+                        <a href="https://hautehotel.kr" target="_blank" class="quest-url">🔗 hautehotel.kr 방문하기</a>
+                    </div>
+                </div>
+
+                <!-- 메인 컨텐츠 그리드 -->
+                <div class="detail-grid">
+                    
+                    <!-- 왼쪽: 화면 캡처 뷰어 -->
+                    <div class="screen-container">
+                        <div class="screen-bar">
+                            <span>SCREEN CAPTURE</span>
+                            <span>1920 x 1080 PX</span>
+                        </div>
+                        <div class="screen-display" id="screenDisplay">
+                            <!-- 실제 이미지 사용 시: <img src="capture_pc.jpg" alt="미리보기"> -->
+                            [ PC SCREENSHOT CAPTURE ]
+                        </div>
+                        <div class="screen-tabs">
+                            <button class="screen-tab-btn active" onclick="switchPreview('PC SCREENSHOT CAPTURE', this)">PC 메인</button>
+                            <button class="screen-tab-btn" onclick="switchPreview('MOBILE SCREENSHOT CAPTURE', this)">모바일</button>
+                            <button class="screen-tab-btn" onclick="switchPreview('SUB PAGE CAPTURE', this)">서브페이지</button>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽: 기여도 & 스탯 패널 -->
+                    <div class="status-panel">
+                        <div>
+                            <div class="status-title">QUEST STATS</div>
+                            
+                            <!-- 세부 기여도 게이지 -->
+                            <div class="gauge-group">
+                                <div class="gauge-label">
+                                    <span>퍼블리싱 (Publishing)</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="gauge-track">
+                                    <div class="gauge-fill" style="width: 100%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="gauge-group">
+                                <div class="gauge-label">
+                                    <span>기획 & 디자인</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="gauge-track">
+                                    <div class="gauge-fill" style="width: 100%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- 기술 스택 -->
+                            <div style="margin-top: 15px;">
+                                <div class="gauge-label"><span>사용 기술 스택</span></div>
+                                <div class="tech-list">
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">CSS3</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">jQuery</span>
+                                    <span class="tech-badge">반응형 웹</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 사이트 방문 버튼 -->
+                        <a href="https://hautehotel.kr" target="_blank" class="pixel-btn primary" style="width: 100%; margin-top: 20px;">
+                            사이트 바로가기 ↗
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- 상세 설명 내용 -->
+                <div class="info-section">
+                    <div class="info-subhead">📋 PROJECT OVERVIEW</div>
+                    <p class="info-desc">
+                        해운대에 위치한 오뜨호텔의 공식 웹사이트로, 방문객이 객실 타입 및 위치 정보를 직관적으로 파악할 수 있도록 제작된 반응형 웹 사이트입니다. 브랜드 인지도 제고와 빠른 예약 전환을 목표로 비주얼 중심의 깔끔한 인터페이스를 구현했습니다.
+                    </p>
+                </div>
+
+                <div class="info-section">
+                    <div class="info-subhead">⚡ KEY FEATURES</div>
+                    <div class="feature-cards">
+                        <div class="feature-item">
+                            <div class="feature-item-title">01. 반응형 UI 구축</div>
+                            <div class="feature-item-desc">데스크톱, 태블릿, 모바일 모든 기기 해상도에서 최적화된 레이아웃을 제공합니다.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-title">02. 객실 모달 갤러리</div>
+                            <div class="feature-item-desc">별도 페이지 이동 없이 모달창에서 객실별 사진과 상세 옵션을 확인하도록 구성했습니다.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-title">03. 외부 예약 연동</div>
+                            <div class="feature-item-desc">실시간 예약 및 외부 숙박 플랫폼 링크와의 직관적인 아웃바운드 구조를 구축했습니다.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 하단 목록 돌아가기 및 다음 프로젝트 버튼 -->
+                <div class="nav-bottom">
+                    <a href="../sub/portfolio01.html" class="pixel-btn">◀ 목록으로 돌아가기</a>
+                    <a href="#" class="pixel-btn primary">다음 프로젝트 ▶</a>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script>
+        // 햄버거 메뉴 동작
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 캡처 화면 미리보기 탭 전환
+        function switchPreview(text, btn) {
+            document.querySelectorAll('.screen-tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            document.getElementById('screenDisplay').innerText = `[ ${text} ]`;
+        }
+    </script>
+</body>
+</html>
